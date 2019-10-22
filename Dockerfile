@@ -1,13 +1,19 @@
-FROM hashicorp/terraform:0.12.12
+FROM alpine:latest
 
-LABEL "com.github.actions.name"="terraform validate"
-LABEL "com.github.actions.description"="Validate the terraform files in a directory"
-LABEL "com.github.actions.icon"="alert-triangle"
-LABEL "com.github.actions.color"="purple"
+LABEL "maintainer"="Igor Souza <igordcsouza@gmail.com>"
 
-LABEL "repository"="https://github.com/hashicorp/terraform-github-actions"
-LABEL "homepage"="http://github.com/hashicorp/terraform-github-actions"
-LABEL "maintainer"="HashiCorp Terraform Team <terraform@hashicorp.com>"
+LABEL "com.github.actions.name"="Get Branch Name"
+LABEL "com.github.actions.description"="Set a environment variable called BRANCH_NAME with the current branch name"
+LABEL "com.github.actions.icon"="activity"
+LABEL "com.github.actions.color"="red"
+LABEL "repository"="https://github.com/igordcsouza/github-action-get-branch-name"
+LABEL "homepage"="https://github.com/igordcsouza/github-action-get-branch-name"
+
+RUN	apk add --no-cache \
+    bash \
+    ca-certificates \
+    curl \
+    jq
 
 RUN apk --update --no-cache add jq curl bash
 

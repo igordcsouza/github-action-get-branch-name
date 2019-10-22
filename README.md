@@ -1,4 +1,5 @@
-# Terraform Validate Action
-Runs `terraform validate` to validate the terraform files in a directory.
+# Set Branch name as env var
 
-See [https://www.terraform.io/docs/github-actions/actions/validate.html](https://www.terraform.io/docs/github-actions/actions/validate.html).
+Variables needed `TOKEN` with a valid `github_token`!
+
+The environment name used to set the branch name is `BRANCH_NAME`
