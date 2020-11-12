@@ -30,7 +30,7 @@ main(){
 	repo=$(jq --raw-output .pull_request.head.repo.name "$GITHUB_EVENT_PATH")
 
 
-	echo ::set-env name=BRANCH_NAME::${ref}
+	echo "BRANCH_NAME=${ref}" >> $GITHUB_ENV
 
 	exit 0
 }
